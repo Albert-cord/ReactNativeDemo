@@ -27,7 +27,8 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-const codePushOptions = {checkFrequency: codePush.CheckFrequency.MANUAL};
+// currently, it's not to hotUpdate by manual operation.
+// const codePushOptions = {checkFrequency: codePush.CheckFrequency.MANUAL};
 const Section: React.FC<
   PropsWithChildren<{
     title: string;
@@ -115,4 +116,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default codePush(codePushOptions)(App);
+export default codePush(App);
