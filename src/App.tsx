@@ -17,9 +17,7 @@ import React, {
 } from 'react';
 import type {ReactNode} from 'react';
 
-import i18n from 'i18n-js';
 import * as RNLocalize from 'react-native-localize';
-import memoize from 'lodash-es/memoize';
 import codePush from 'react-native-code-push';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -34,7 +32,6 @@ import {
   useColorScheme,
   View,
   Button,
-  I18nManager,
   Image,
   ImageStyle,
   ViewStyle,
@@ -50,40 +47,11 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+
+import {translate, setI18nConfig, getLanguageConfig} from './i18n';
+
 // currently, it's not to hotUpdate by manual operation.
 // const codePushOptions = {checkFrequency: codePush.CheckFrequency.MANUAL};
-
-const translationGetters = {
-  // lazy requires
-  zh: () => require('./src/i18n/zh.json'),
-  en: () => require('./src/i18n/en.json'),
-};
-
-const translate = memoize(
-  (key, config?: any) => i18n.t(key, config),
-  (key, config) => (config ? key + JSON.stringify(config) : key),
-);
-
-const setI18nConfig = () => {
-  // fallback if no available language fits
-  const fallback = {languageTag: 'en', isRTL: false};
-
-  const {languageTag, isRTL} =
-    RNLocalize.findBestAvailableLanguage(Object.keys(translationGetters)) ||
-    fallback;
-
-  // clear translation cache
-  translate.cache.clear?.();
-  // update layout direction
-  I18nManager.forceRTL(isRTL);
-
-  // set i18n-js config
-  i18n.translations = {
-    [languageTag]: translationGetters[languageTag as 'zh' | 'en'](),
-  };
-
-  i18n.locale = languageTag;
-};
 
 const Section: React.FC<
   PropsWithChildren<{
@@ -451,8 +419,7 @@ function DateMoodIndex({
     </>
   );
 
-  const {languageTag} =
-    RNLocalize.findBestAvailableLanguage(Object.keys(translationGetters)) || {};
+  const {languageTag} = getLanguageConfig();
 
   return (
     <View
