@@ -441,6 +441,10 @@ function DateMoodIndex({
       </View>
     </>
   );
+
+  const {languageTag, isRTL} =
+    RNLocalize.findBestAvailableLanguage(Object.keys(translationGetters)) || {};
+
   return (
     <View
       style={{
@@ -478,9 +482,6 @@ function DateMoodIndex({
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 backgroundColor: getMoodColumnBackgroudColor(mood)[0],
-                // height: getMoodColumnHeight(score),
-                // height: 100,
-                // height: heightInterpolate.current,
                 opacity: opacityAnimate,
                 flexShrink: 1,
                 borderRadius: 30,
@@ -518,12 +519,13 @@ function DateMoodIndex({
           }}>
           <Animated.Text
             style={{
-              fontSize: 18,
+              fontSize: languageTag === 'zh' ? 18 : 14,
               textAlign: 'center',
               textAlignVertical: 'top',
               alignContent: 'center',
               opacity: dateOpacityAnimate,
               justifyContent: 'center',
+              fontWeight: '500',
               ...(isSelect
                 ? {
                     color: getMoodColumnBackgroudColor(mood)[0],
@@ -598,6 +600,20 @@ function TestProjectOneScreen() {
     translate('friday'),
     translate('saturday'),
   ];
+  const opacityAnimate = useRef(new Animated.Value(0)).current;
+  const maskOpacityAnimate = useRef(new Animated.Value(0)).current;
+  useEffect(() => {
+    Animated.timing(opacityAnimate, {
+      useNativeDriver: true,
+      toValue: 1,
+      duration: 400,
+    }).start();
+    Animated.timing(maskOpacityAnimate, {
+      useNativeDriver: true,
+      toValue: 1,
+      duration: 400,
+    }).start();
+  });
   return (
     <View
       style={{
@@ -606,7 +622,7 @@ function TestProjectOneScreen() {
         backgroundColor: '#ffffff',
         paddingHorizontal: 12,
       }}>
-      <View
+      <Animated.View
         style={{
           position: 'absolute',
           top: 0,
@@ -622,13 +638,15 @@ function TestProjectOneScreen() {
           shadowOffset: {height: -6, width: 16},
           shadowOpacity: 0.15,
           marginTop: 18,
+          opacity: maskOpacityAnimate,
         }}
       />
-      <View
+      <Animated.View
         style={{
           flexDirection: 'column',
           borderRadius: 24,
           backgroundColor: '#ffffff',
+          opacity: opacityAnimate,
           marginTop: 18,
         }}>
         <>
@@ -685,7 +703,7 @@ function TestProjectOneScreen() {
             })}
           </View>
         </>
-      </View>
+      </Animated.View>
     </View>
   );
 }
