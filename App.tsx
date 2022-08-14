@@ -253,7 +253,7 @@ function Score({
     <View
       style={{
         alignItems: 'center',
-        ...style,
+        ...(style as ViewStyle),
       }}>
       {nodes}
     </View>
@@ -408,7 +408,16 @@ function DateMoodIndex({
     return () => {
       clearTimeout(timer);
     };
-  }, [score, timeout]);
+  }, [
+    score,
+    timeout,
+    opacityAnimate,
+    scoreOpacityAnimate,
+    dateOpacityAnimate,
+    dateScaleInAnimate,
+    scaleAnimate,
+    heightAnimate,
+  ]);
   const children = (
     <>
       <Score
@@ -442,7 +451,7 @@ function DateMoodIndex({
     </>
   );
 
-  const {languageTag, isRTL} =
+  const {languageTag} =
     RNLocalize.findBestAvailableLanguage(Object.keys(translationGetters)) || {};
 
   return (
@@ -581,9 +590,9 @@ const mockData = [
     id: id++,
   },
 ];
-function createAnimationTimeouts(timeBounce: number, count = 7) {
+function createAnimationTimeouts(timeBounce: number, count: number = 7) {
   const timers = [timeBounce];
-  for (let i = 1; i < 7; i++) {
+  for (let i = 1; i < count; i++) {
     timers[i] = timers[i - 1] + timeBounce;
   }
   return timers;
