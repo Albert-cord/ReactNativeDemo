@@ -6,8 +6,8 @@ import {I18nManager} from 'react-native';
 // TODO:
 const translationGetters = {
   // lazy requires
-  zh: () => require('./i18n/lang/zh.json'),
-  en: () => require('./i18n/lang/en.json'),
+  zh: () => require('./lang/zh.json'),
+  en: () => require('./lang/en.json'),
 };
 
 const translate = memoize(
