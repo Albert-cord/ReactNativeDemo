@@ -4,7 +4,7 @@ import {StyleSheet, View, Text, Button} from 'react-native';
 function HomeScreen({navigation}: any) {
   return (
     <View style={styles.home}>
-      <Text>Home Screen</Text>
+      <Text style={styles.homeText}>Home Screen</Text>
       <Button
         title="Go to TestProjectOne"
         onPress={() => navigation.navigate('TestProjectOne')}
@@ -18,6 +18,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  homeText: {
+    color: '#000000',
+    fontSize: 18,
   },
 });
 
