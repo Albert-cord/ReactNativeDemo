@@ -1,0 +1,12 @@
+{
+    "historyMoodIndex": "Historical Mood Index",
+    "name": "Qiang Li",
+    "weeklyAverageMoodIndex": "Weekly average mood index",
+    "monday": "Mon",
+    "tuesday": "Tue",
+    "wednesday": "Wed",
+    "thursday": "Thu",
+    "friday": "Fri",
+    "saturday": "Sat",
+    "sunday": "Sun"
+}
