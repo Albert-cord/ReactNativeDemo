@@ -15,8 +15,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {translate} from './i18n';
-import {HomeScreen} from './pages/Home';
-import {TestProjectOneScreen} from './pages/TestProjectOne';
+import {HomeScreen} from './screens/Home';
+import {TestProjectOneScreen} from './screens/TestProjectOne';
 import {useSetI18nConfig} from './hooks/useSetI18nConfig';
 // currently, it's not need to hotUpdate by manual operation.
 // const codePushOptions = {checkFrequency: codePush.CheckFrequency.MANUAL};
