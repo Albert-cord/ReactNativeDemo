@@ -1,7 +1,9 @@
 # Test
 
-The UI design https://www.figma.com/file/xh4iktpcpSaCPjJN9SMsDO/%E5%89%8D%E7%AB%AF%E6%B5%8B%E8%AF%95%E9%A2%98?nodeid=0%3A1
-The live video https://www.bilibili.com/video/BV1MU4y1V7aa/
+The UI design: https://www.figma.com/file/xh4iktpcpSaCPjJN9SMsDO/%E5%89%8D%E7%AB%AF%E6%B5%8B%E8%AF%95%E9%A2%98?nodeid=0%3A1
+
+The live video: https://www.bilibili.com/video/BV1MU4y1V7aa/
+
 
 Please provide the following:
 1) Design document to explain the technology choice, and your assumptions. For example, did you use any external library to help, and why?
@@ -33,11 +35,11 @@ Tech stacks: React + React Native + TypeScript + Jest
 
 3. the simplest test case
 
-4. you can download the screen/app-release.apk and install it to review the demo, or you can watch the demo_en_video.mp4 and demo_zh_video.mp4 to review the demo.
+4. you can download the screen/app-release.apk and install it to review the demo, or you can watch the ![demo_en_video.mp4](./screen/demo_en_video.mp4) and ![demo_zh_video.mp4](./screen/demo_zh_video.mp4) to review the demo.
 
 
 # Troubleshooting
-I change the setting
+I change the setting:
 ```
 org.gradle.java.home=I:/code/openjdk-11.0.2_windows-x64_bin/jdk-11.0.2
 ```
