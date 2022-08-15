@@ -15,5 +15,22 @@ a. You could use the programming language that you are most familiar.
 b. Keep it simple and make it looks good ☺
 
 
-# Spec
-go to /docs fold to see detail
+# Solution
+
+Tech stacks: React + React Native + TypeScript + Jest
+
+1) Use The React Native to develop, because it share code across platforms. use some external library below to develop:  
+    1. **react-native-code-push**, which help us to quickly hot update App
+    ```
+    The CodePush plugin helps get product improvements in front of your end users instantly, by keeping your JavaScript and images synchronized with updates you release to the CodePush server. This way, your app gets the benefits of an offline mobile experience, as well as the "web-like" agility of side-loading updates as soon as they are available. It's a win-win!
+    ```
+    2. some navigation toolkits, such as **@react-navigation/native and @react-navigation/native-stack and react-native-screens**, React Navigation's native stack navigator provides a way for your app to transition between screens and manage navigation history. 
+    3. **react-native-localize and i18n-js** provides i18n function, besides there would be greate if keep a github submodule and take a circle ci to intergate multiple languages to make a smooth translation partion
+    4. **lodash-es**, A modern JavaScript utility library delivering modularity, performance & extras. use it's memoize function in the code.
+    5. **react-native-linear-gradient** provides the linear-gradient component
+
+2. you can goto [ReactNativeDemo](https://github.com/Albert-cord/ReactNativeDemo) to check out the codebase.
+
+3. the simplest test case
+
+4. you can download the screen/app-release.apk and install it to review the demo, or you can watch the demo_en_video.mp4 and demo_zh_video.mp4 to review the demo.
