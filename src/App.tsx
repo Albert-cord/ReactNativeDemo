@@ -8,38 +8,27 @@
  * @format
  */
 
-import React, {useCallback, useEffect, useState} from 'react';
+import React from 'react';
 
-import * as RNLocalize from 'react-native-localize';
 import codePush from 'react-native-code-push';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import {translate, setI18nConfig} from './i18n';
+import {translate} from './i18n';
 import {HomeScreen} from './pages/Home';
 import {TestProjectOneScreen} from './pages/TestProjectOne';
+import {useSetI18nConfig} from './hooks/useSetI18nConfig';
 // currently, it's not to hotUpdate by manual operation.
 // const codePushOptions = {checkFrequency: codePush.CheckFrequency.MANUAL};
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
-  const forceUpdate = useState(0)[1];
-  const handleLocalizationChange = useCallback(() => {
-    setI18nConfig();
-    forceUpdate(n => n + 1);
-  }, [forceUpdate]);
-  setI18nConfig();
-  useEffect(() => {
-    RNLocalize.addEventListener('change', handleLocalizationChange);
-    return () => {
-      RNLocalize.removeEventListener('change', handleLocalizationChange);
-    };
-  }, [handleLocalizationChange]);
+  useSetI18nConfig();
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="TestProjectOne">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen
           name="TestProjectOne"
