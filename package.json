@@ -49,6 +49,9 @@
       "jsx",
       "json",
       "node"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native-code-push|lodash-es|@react-native|react-native|@react-navigation)"
     ]
   }
 }
