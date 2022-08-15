@@ -1,13 +1,21 @@
 import React from 'react';
 import type {ReactNode} from 'react';
 
-import {StyleSheet, Text, View, ImageStyle, Image} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ImageStyle,
+  Image,
+  ViewStyle,
+} from 'react-native';
 
 import {flex} from '../utils/styles';
 type AvatarProps = {
   label?: ReactNode;
   iconSrc?: string;
-  style: ImageStyle;
+  style: ViewStyle;
+  imageStyle?: ImageStyle;
 };
 
 // size
@@ -18,12 +26,13 @@ export const iconStyle: Partial<ImageStyle> = {
 };
 
 // without icon loading and suffix word function
-function Avatar({label, iconSrc, style}: AvatarProps) {
+function Avatar({label, iconSrc, style, imageStyle}: AvatarProps) {
   return (
     <View style={[style, flex.row]}>
       <Image
         style={{
           ...iconStyle,
+          ...imageStyle,
         }}
         source={iconSrc || require('../../assets/img/icon.png')}
       />

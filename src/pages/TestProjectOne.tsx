@@ -75,6 +75,12 @@ function TestProjectOneScreen() {
     }),
     [],
   );
+  const avatarImageStyle = useMemo(
+    () => ({
+      marginRight: 12,
+    }),
+    [],
+  );
   const moodIndexStyle = useMemo(
     () => ({
       ...avatarStyles.moodIndexPoint,
@@ -114,6 +120,7 @@ function TestProjectOneScreen() {
         <>
           <Avatar
             style={{...styles.horizontalAndVerticalCenter, ...avatarIconStyle}}
+            imageStyle={avatarImageStyle}
             label={translate('name')}
           />
           <Score

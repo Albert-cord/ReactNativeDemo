@@ -300,7 +300,7 @@ const styles = StyleSheet.create({
     shadowColor: '#000000',
     shadowOpacity: 0.2,
     elevation: 4,
-    shadowOffset: {height: 4, width: -10},
+    shadowOffset: {height: 4, width: 10},
   },
   moodDateCurrent: {
     ...iconStyle,
@@ -314,7 +314,7 @@ const styles = StyleSheet.create({
     shadowColor: '#000000',
     elevation: 4,
     shadowOpacity: 1,
-    shadowOffset: {height: 4, width: -12},
+    shadowOffset: {height: 4, width: 10},
     shadowRadius: 8,
   },
   moodAnimatedColumnBar: {
