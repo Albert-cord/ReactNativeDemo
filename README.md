@@ -35,7 +35,7 @@ Tech stacks: React + React Native + TypeScript + Jest
 
 3. the simplest test case
 
-4. you can download the screen/app-release.apk and install it to review the demo, or you can watch the ![demo_en_video.mp4](./screen/demo_en_video.mp4) and ![demo_zh_video.mp4](./screen/demo_zh_video.mp4) to review the demo.
+4. you can download the screen/app-release.apk and install it to review the demo, or you can watch the [demo_en_video.mp4](./screen/demo_en_video.mp4) and [demo_zh_video.mp4](./screen/demo_zh_video.mp4) to review the demo.
 
 
 # Troubleshooting
