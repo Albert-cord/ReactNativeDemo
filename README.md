@@ -34,3 +34,12 @@ Tech stacks: React + React Native + TypeScript + Jest
 3. the simplest test case
 
 4. you can download the screen/app-release.apk and install it to review the demo, or you can watch the demo_en_video.mp4 and demo_zh_video.mp4 to review the demo.
+
+
+# Troubleshooting
+I change the setting
+```
+org.gradle.java.home=I:/code/openjdk-11.0.2_windows-x64_bin/jdk-11.0.2
+```
+to modify the jdk pointer in the /android/gradle.properties file.
+if you wanna establish the codebase by yourself, please change it base on your local machine env.
